@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'user-app',
-  template: '<h1>Testing</h1>'
+  template: '<app-user></app-user>'
 })
 export class UserAppComponent {
 
