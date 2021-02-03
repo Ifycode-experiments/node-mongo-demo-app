@@ -43,4 +43,8 @@ export class UserComponent implements OnInit {
     });
   }
 
+  onEdit(user: User) {
+    this.userService.selectedUser = user;
+  }
+
 }
