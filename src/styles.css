@@ -1,4 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 html, body {
   height: 100%;
@@ -11,4 +16,54 @@ body {
 
 button {
   cursor: pointer;
+  padding: 10px 20px;
+  background: teal;
+  color: white;
+  margin: 0 5px 0 0; /**/
+  border-radius: 3px;
 }
+
+button:disabled {
+  background:#b9b9b9;
+  color: #3b3b3b;
+  cursor: not-allowed;
+}
+
+input, label {
+  display: block;
+}
+
+label {
+  font-size: 0.8em;
+  font-weight: 600;
+  margin: 0 0 3px 0;
+}
+
+input {
+  background: #111153;
+  padding: 5px;
+  font-size: 1em;
+  color: white;
+  border-radius: 3px;
+  border: 1px solid transparent;
+}
+
+.formGroup {
+  margin: 0 0 10px 0;
+}
+
+input.ng-invalid.ng-dirty {
+  background: red;
+}
+
+
+/*helpers*/
+.red-text {
+  color: red;
+}
+
+.bold-text {
+  font-weight: 700;
+}
+
+
