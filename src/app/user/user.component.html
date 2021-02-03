@@ -24,5 +24,28 @@
       </div>
     </form>
   </div>
-  <div></div>
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th>Name:</th>
+          <th>Address:</th>
+          <th>Email:</th>
+          <th>Phone:</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of userService.users">
+          <td>{{user.name}}</td>
+          <td>{{user.address}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.phone}}</td>
+          <td>
+            <button>Edit</button>
+            <button>Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

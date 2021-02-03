@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UserService {
   selectedUser: User;
+  users: User[];
 
   readonly baseURL = 'http://localhost:3000/users';
 
@@ -14,5 +15,9 @@ export class UserService {
 
   postUser(newUser: User) {
     return this.httpClient.post(this.baseURL, newUser);
+  }
+
+  getUserList() {
+    return this.httpClient.get(this.baseURL);
   }
 }
