@@ -1,6 +1,6 @@
 <div>
   <div>
-    <form #userForm="ngForm">
+    <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
       <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="userService.selectedUser._id">
       <div class="formGroup">
         <label for="userName">Name <span class="red-text bold-text">*</span></label>

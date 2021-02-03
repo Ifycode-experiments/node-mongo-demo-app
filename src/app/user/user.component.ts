@@ -28,4 +28,11 @@ export class UserComponent implements OnInit {
       }
   }
 
+  onSubmit(form: NgForm) {
+    this.userService.postUser(form.value)
+      .subscribe(res => {
+        this.resetForm(form);
+      });
+  }
+
 }
