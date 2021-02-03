@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { UserService } from '../shared/user.service';
 
 @Component({
   selector: 'app-user',
@@ -6,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  constructor() { }
+  constructor(public userService: UserService) {
+
+  }
 
   ngOnInit(): void {
+    this.resetForm();
+  }
+
+  resetForm(form?: NgForm) {
+    if (form)
+      form.reset();
+      this.userService.selectedUser = {
+        _id: "",
+        name: "",
+        address: "",
+        email: "",
+        phone: null
+      }
   }
 
 }

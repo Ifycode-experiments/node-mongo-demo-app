@@ -1,26 +1,26 @@
 <div>
   <div>
-    <form>
-      <input type="hidden" name="_id">
+    <form #userForm="ngForm">
+      <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="userService.selectedUser._id">
       <div>
         <label for="userName">Name: <span>*</span></label>
-        <input type="text" id="userName" name="name">
+        <input type="text" id="userName" name="name" #name="ngModel" [(ngModel)]="userService.selectedUser.name">
       </div>
       <div>
         <label for="userAddress">Address</label>
-        <input type="text" id="userAddress" name="address">
+        <input type="text" id="userAddress" name="address" #address="ngModel" [(ngModel)]="userService.selectedUser.address">
       </div>
       <div>
         <label for="userEmail">Email</label>
-        <input type="text" id="userEmail" name="email">
+        <input type="text" id="userEmail" name="email" #email="ngModel" [(ngModel)]="userService.selectedUser.email">
       </div>
       <div>
         <label for="userPhone">Phone</label>
-        <input type="text" id="userPhone" name="phone">
+        <input type="text" id="userPhone" name="phone" #phone="ngModel" [(ngModel)]="userService.selectedUser.phone">
       </div>
       <div>
-        <button type="button">Reset</button>
         <button type="submit">Submit</button>
+        <button type="button" (click)="resetForm(userForm)">Reset</button>
       </div>
     </form>
   </div>
