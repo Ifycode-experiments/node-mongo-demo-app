@@ -15,7 +15,7 @@ export class UserComponent implements OnInit {
 
   ngOnInit(): void {
     this.resetForm();
-    this.getUsers();
+    this.refreshUsersList();
   }
 
   resetForm(form?: NgForm) {
@@ -31,13 +31,22 @@ export class UserComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    this.userService.postUser(form.value)
+    if (form.value._id === '') {
+      this.userService.postUser(form.value)
       .subscribe(res => {
         this.resetForm(form);
+        this.refreshUsersList();
       });
+    }else {
+      this.userService.putUser(form.value)
+      .subscribe(res => {
+        this.resetForm(form);
+        this.refreshUsersList();
+      });
+    }
   }
 
-  getUsers() {
+  refreshUsersList() {
     this.userService.getUserList().subscribe(res => {
       this.userService.users = res as User[];
     });

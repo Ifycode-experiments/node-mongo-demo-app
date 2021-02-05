@@ -20,4 +20,8 @@ export class UserService {
   getUserList() {
     return this.httpClient.get(this.baseURL);
   }
+
+  putUser(user: User) {
+    return this.httpClient.put(this.baseURL + `/${user._id}`, user);
+  }
 }
