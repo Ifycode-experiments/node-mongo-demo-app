@@ -42,7 +42,7 @@
           <td>{{user.phone}}</td>
           <td>
             <button (click)="onEdit(user)">Edit</button>
-            <button>Delete</button>
+            <button (click)="onDelete(user._id, userForm)">Delete</button>
           </td>
         </tr>
       </tbody>

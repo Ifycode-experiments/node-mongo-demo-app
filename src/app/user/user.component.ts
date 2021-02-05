@@ -56,4 +56,13 @@ export class UserComponent implements OnInit {
     this.userService.selectedUser = user;
   }
 
+  onDelete(_id: string, form: NgForm) {
+    if(confirm('Are you sure you want to delete this record?') === true) {
+      this.userService.deleteUser(_id)
+        .subscribe(res => {
+          this.refreshUsersList();
+          this.resetForm();
+        });
+    }
+  }
 }

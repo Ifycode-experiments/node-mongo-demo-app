@@ -24,4 +24,8 @@ export class UserService {
   putUser(user: User) {
     return this.httpClient.put(this.baseURL + `/${user._id}`, user);
   }
+
+  deleteUser(_id: string) {
+    return this.httpClient.delete(this.baseURL + `/${_id}`);
+  }
 }
