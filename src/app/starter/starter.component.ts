@@ -9,7 +9,7 @@ import { Starter } from '../shared/starter.model';
 })
 export class StarterComponent implements OnInit {
 
-  constructor(public userService: StarterService) {
+  constructor(public starterService: StarterService) {
 
   }
 
@@ -21,7 +21,7 @@ export class StarterComponent implements OnInit {
   resetForm(form?: NgForm) {
     if (form)
       form.reset();
-      this.userService.selectedUser = {
+      this.starterService.selectedUser = {
         _id: "",
         name: "",
         address: "",
@@ -32,13 +32,13 @@ export class StarterComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     if (form.value._id === '') {
-      this.userService.postUser(form.value)
+      this.starterService.postUser(form.value)
       .subscribe(res => {
         this.resetForm(form);
         this.refreshUsersList();
       });
     }else {
-      this.userService.putUser(form.value)
+      this.starterService.putUser(form.value)
       .subscribe(res => {
         this.resetForm(form);
         this.refreshUsersList();
@@ -47,18 +47,18 @@ export class StarterComponent implements OnInit {
   }
 
   refreshUsersList() {
-    this.userService.getUserList().subscribe(res => {
-      this.userService.users = res as Starter[];
+    this.starterService.getUserList().subscribe(res => {
+      this.starterService.users = res as Starter[];
     });
   }
 
   onEdit(user: Starter) {
-    this.userService.selectedUser = user;
+    this.starterService.selectedUser = user;
   }
 
   onDelete(_id: string, form: NgForm) {
     if(confirm('Are you sure you want to delete this record?') === true) {
-      this.userService.deleteUser(_id)
+      this.starterService.deleteUser(_id)
         .subscribe(res => {
           this.refreshUsersList();
           this.resetForm();
