@@ -7,16 +7,8 @@
         <input type="text" id="userName" name="name" #name="ngModel" [(ngModel)]="starterService.selectedUser.name" required>
       </div>
       <div class="formGroup">
-        <label for="userAddress">Address</label>
-        <input type="text" id="userAddress" name="address" #address="ngModel" [(ngModel)]="starterService.selectedUser.address">
-      </div>
-      <div class="formGroup">
-        <label for="userEmail">Email</label>
-        <input type="text" id="userEmail" name="email" #email="ngModel" [(ngModel)]="starterService.selectedUser.email">
-      </div>
-      <div class="formGroup">
-        <label for="userPhone">Phone</label>
-        <input type="text" id="userPhone" name="phone" #phone="ngModel" [(ngModel)]="starterService.selectedUser.phone">
+        <label for="userage">age</label>
+        <input type="text" id="userage" name="age" #age="ngModel" [(ngModel)]="starterService.selectedUser.age">
       </div>
       <div>
         <button type="submit" [disabled]="!userForm.valid">Submit</button>
@@ -29,17 +21,13 @@
       <thead>
         <tr>
           <th>Name:</th>
-          <th>Address:</th>
-          <th>Email:</th>
-          <th>Phone:</th>
+          <th>age:</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let user of starterService.users">
           <td>{{user.name}}</td>
-          <td>{{user.address}}</td>
-          <td>{{user.email}}</td>
-          <td>{{user.phone}}</td>
+          <td>{{user.age}}</td>
           <td>
             <button (click)="onEdit(user)">Edit</button>
             <button (click)="onDelete(user._id, userForm)">Delete</button>

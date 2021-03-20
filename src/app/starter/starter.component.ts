@@ -24,9 +24,7 @@ export class StarterComponent implements OnInit {
       this.starterService.selectedUser = {
         _id: "",
         name: "",
-        address: "",
-        email: "",
-        phone: null
+        age: null
       }
   }
 
