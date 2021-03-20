@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { UserService } from '../shared/user.service';
-import { User } from '../shared/user.model';
+import { StarterService } from '../shared/starter.service';
+import { Starter } from '../shared/starter.model';
 
 @Component({
-  selector: 'app-user',
-  templateUrl: './user.component.html'
+  selector: 'app-starter',
+  templateUrl: './starter.component.html'
 })
-export class UserComponent implements OnInit {
+export class StarterComponent implements OnInit {
 
-  constructor(public userService: UserService) {
+  constructor(public userService: StarterService) {
 
   }
 
@@ -48,11 +48,11 @@ export class UserComponent implements OnInit {
 
   refreshUsersList() {
     this.userService.getUserList().subscribe(res => {
-      this.userService.users = res as User[];
+      this.userService.users = res as Starter[];
     });
   }
 
-  onEdit(user: User) {
+  onEdit(user: Starter) {
     this.userService.selectedUser = user;
   }
 

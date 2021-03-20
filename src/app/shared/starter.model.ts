@@ -1,4 +1,4 @@
-export class User {
+export class Starter {
   _id: String;
   name: String;
   address: String;
