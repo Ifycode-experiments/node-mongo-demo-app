@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/css-helper-library/css/styles.css",
               "src/styles.css"
             ],
             "scripts": []

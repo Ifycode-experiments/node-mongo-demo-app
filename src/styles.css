@@ -1,3 +1,5 @@
+
+/*
 * {
   margin: 0;
   border: 0;
@@ -19,7 +21,7 @@ button {
   padding: 10px 20px;
   background: teal;
   color: white;
-  margin: 0 5px 0 0; /**/
+  margin: 0 5px 0 0; /**\/
   border-radius: 3px;
 }
 
@@ -57,7 +59,7 @@ input.ng-invalid.ng-dirty {
 }
 
 
-/*helpers*/
+/*helpers*\/
 .red-text {
   color: red;
 }
@@ -65,5 +67,9 @@ input.ng-invalid.ng-dirty {
 .bold-text {
   font-weight: 700;
 }
+
+"C:/dev/angular-11/node-mongo/collabo-css-library/css/styles.css"
+
+*/
 
 
