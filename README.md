@@ -1,5 +1,5 @@
-# Starter Demo App
-### (for node-mongo-cli project)
+# Starter Quick Tour
+### (demo app for node-mongo-cli project)
 
 Demo app built to help users tour or learn to use the starter kit generated from the node-mongo-cli project.
 <!--
