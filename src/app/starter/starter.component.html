@@ -1,3 +1,86 @@
+
+<div class="b-container grid-auto-1-auto-row">
+  <header class="flex-space-btw">
+    <div class="flex-a-center">
+      <a href="./starter.html" class="img-wrapper img-case">
+        <img class="img-default" src="./code-collabo-logo.png" alt="site logo">
+      </a>
+      <h1><a href="./starter.html">Starter Quick Tour</a></h1>
+    </div>
+    <nav>
+      <button class="btn-default">Tutorial</button>
+    </nav>
+  </header>
+  <main>
+    <div class="block-auto">
+      <header class="flex-j-center main-header">
+        <div class="main-description">
+          <p>
+            Demo app for node-mongo-cli & starter kit project.
+            Test and/or learn to use node-mongo-starter-kit using
+            the name & age properties defined in the starter.js
+            model file.
+          </p>
+          <p>
+            Your name & age entry should display in the table below
+            the form if your connection is well set up. Click on this link
+            to see your entry stored in the database & returned as
+            json - <a href="">add url here</a>
+          </p>
+        </div>
+      </header>
+      <form class="block-auto form" #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+        <input class="block" type="hidden" name="_id" #_id="ngModel" [(ngModel)]="starterService.selectedUser._id">
+        <div class="block-auto formGroup">
+          <label for="userName">Name <span class="red-text bold-text">*</span></label>
+          <input type="text" id="userName" name="name" #name="ngModel" [(ngModel)]="starterService.selectedUser.name" required>
+        </div>
+        <div class="block-auto formGroup">
+          <label for="userage">age</label>
+          <input type="text" id="userage" name="age" #age="ngModel" [(ngModel)]="starterService.selectedUser.age">
+        </div>
+        <div class="flex-j-center btnGroup">
+          <button type="submit" [disabled]="!userForm.valid" disabled>Submit</button>
+          <button class="btn-transparent" type="button" (click)="resetForm(userForm)">Reset</button>
+        </div>
+      </form>
+      <section class="x-auto main-section">
+        <div class="flex-center empty-div">Nothing to display yet</div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Age</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of starterService.users">
+              <td>{{user.name}}</td>
+              <td>{{user.age}}</td>
+              <td>
+                <button class="btn-default" (click)="onEdit(user)">
+                  <a href="./starter.html" class="img-wrapper img-case">
+                    <img class="img-default" src="./edit-icon.png" alt="edit button icon">
+                  </a>
+                </button>
+                <button class="btn-danger" (click)="onDelete(user._id, userForm)">
+                  <a href="./starter.html" class="img-wrapper img-case">
+                    <img class="img-default delete-icon" src="./delete-icon.png" alt="delete button icon">
+                  </a>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </main>
+  <footer class="flex-center">&copy;2021 | <a href="">Code Collabo</a> | <a href=""> Obiagba </a></footer>
+</div>
+
+
+
+<!--
 <div>
   <div>
     <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
@@ -37,3 +120,4 @@
     </table>
   </div>
 </div>
+-->
