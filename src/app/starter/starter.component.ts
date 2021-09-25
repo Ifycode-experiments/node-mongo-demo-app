@@ -46,7 +46,7 @@ export class StarterComponent implements OnInit {
 
   refreshUsersList() {
     this.starterService.getUserList().subscribe(res => {
-      this.starterService.users = res as Starter[];
+      this.starterService.users = res['items'];
     });
   }
 
