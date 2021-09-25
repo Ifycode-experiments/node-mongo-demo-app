@@ -113,14 +113,14 @@ main {
 }
 
 .main-section .empty-div {
-  /*display: none;*/
+  display: none;
   background: #ececec;
   color: #999999;
   height: 150px;
 }
 
 .main-section table {
-  display: none;
+  /*display: none;*/
   table-layout: fixed;
   border-collapse: collapse;
   width: 100%;
