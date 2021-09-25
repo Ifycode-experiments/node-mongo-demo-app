@@ -1,19 +1,19 @@
 import { Injectable } from '@angular/core';
-import { Starter } from './starter.model';
+import { Demo } from './starter.model';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
-export class StarterService {
-  selectedUser: Starter;
-  users: Starter[];
+export class DemoService {
+  selectedUser: Demo;
+  users: Demo[];
 
   readonly baseURL = 'http://localhost:3000/users';
 
   constructor(private httpClient: HttpClient) { }
 
-  postUser(newUser: Starter) {
+  postUser(newUser: Demo) {
     return this.httpClient.post(this.baseURL, newUser);
   }
 
@@ -21,7 +21,7 @@ export class StarterService {
     return this.httpClient.get(this.baseURL);
   }
 
-  putUser(user: Starter) {
+  putUser(user: Demo) {
     return this.httpClient.put(this.baseURL + `/${user._id}`, user);
   }
 

@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { StarterService } from '../shared/starter.service';
-import { Starter } from '../shared/starter.model';
+import { DemoService } from '../shared/starter.service';
+import { Demo } from '../shared/starter.model';
 
 @Component({
   selector: 'app-starter',
   templateUrl: './starter.component.html'
 })
-export class StarterComponent implements OnInit {
+export class DemoComponent implements OnInit {
 
-  constructor(public starterService: StarterService) {
+  constructor(public starterService: DemoService) {
 
   }
 
@@ -50,7 +50,7 @@ export class StarterComponent implements OnInit {
     });
   }
 
-  onEdit(user: Starter) {
+  onEdit(user: Demo) {
     this.starterService.selectedUser = user;
   }
 

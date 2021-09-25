@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
   selector: 'starter-app',
   template: '<app-starter></app-starter>'
 })
-export class StarterAppComponent {
+export class DemoAppComponent {
 
 }

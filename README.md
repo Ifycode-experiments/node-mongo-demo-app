@@ -1,7 +1,7 @@
-# Starter Quick Tour
-### (demo app for node-mongo-cli project)
+# node-mongo demo app
+### (demo app for the node-mongo project)
 
-Demo app built to help users tour or learn to use the starter kit generated from the node-mongo-cli project.
+Demo (client) app with CRUD operations setup for testing the boilerplate template kit(s) generated from the node-mongo-cli.
 <!--
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
 

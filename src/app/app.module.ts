@@ -3,14 +3,14 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-import { StarterAppComponent } from './starter-app.component';
-import { StarterComponent } from './starter/starter.component';
-import { StarterService } from './shared/starter.service';
+import { DemoAppComponent } from './starter-app.component';
+import { DemoComponent } from './starter/starter.component';
+import { DemoService } from './shared/starter.service';
 
 @NgModule({
   declarations: [
-    StarterAppComponent,
-    StarterComponent
+    DemoAppComponent,
+    DemoComponent
   ],
   imports: [
     BrowserModule,
@@ -18,10 +18,10 @@ import { StarterService } from './shared/starter.service';
     HttpClientModule
   ],
   providers: [
-    StarterService
+    DemoService
   ],
   bootstrap: [
-    StarterAppComponent
+    DemoAppComponent
   ]
 })
 export class AppModule { }
