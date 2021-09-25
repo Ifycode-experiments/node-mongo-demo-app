@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "user-client": {
+    "node-mongo-demo-app": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/user-client",
+            "outputPath": "dist/node-mongo-demo-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -63,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "user-client:build"
+            "browserTarget": "node-mongo-demo-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "user-client:build:production"
+              "browserTarget": "node-mongo-demo-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "user-client:build"
+            "browserTarget": "node-mongo-demo-app:build"
           }
         },
         "test": {
@@ -111,16 +111,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "user-client:serve"
+            "devServerTarget": "node-mongo-demo-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "user-client:serve:production"
+              "devServerTarget": "node-mongo-demo-app:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "user-client"
+  "defaultProject": "node-mongo-demo-app",
+  "cli": {
+    "analytics": false
+  }
 }

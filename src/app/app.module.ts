@@ -3,9 +3,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-import { DemoAppComponent } from './starter-app.component';
-import { DemoComponent } from './starter/starter.component';
-import { DemoService } from './shared/starter.service';
+import { DemoAppComponent } from './demo-app.component';
+import { DemoComponent } from './demo/demo.component';
+import { DemoService } from './shared/demo.service';
 
 @NgModule({
   declarations: [

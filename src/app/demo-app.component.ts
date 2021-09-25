@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'starter-app',
-  template: '<app-starter></app-starter>'
+  selector: 'demo-app',
+  template: '<app-demo></app-demo>'
 })
 export class DemoAppComponent {
 

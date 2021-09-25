@@ -30,14 +30,14 @@
         </div>
       </header>
       <form class="block-auto form" #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
-        <input class="block" type="hidden" name="_id" #_id="ngModel" [(ngModel)]="starterService.selectedUser._id">
+        <input class="block" type="hidden" name="_id" #_id="ngModel" [(ngModel)]="demoService.selectedUser._id">
         <div class="block-auto formGroup">
           <label for="userName">Name <span class="red-text bold-text">*</span></label>
-          <input type="text" id="userName" name="name" #name="ngModel" [(ngModel)]="starterService.selectedUser.name" required>
+          <input type="text" id="userName" name="name" #name="ngModel" [(ngModel)]="demoService.selectedUser.name" required>
         </div>
         <div class="block-auto formGroup">
           <label for="userage">age</label>
-          <input type="text" id="userage" name="age" #age="ngModel" [(ngModel)]="starterService.selectedUser.age">
+          <input type="text" id="userage" name="age" #age="ngModel" [(ngModel)]="demoService.selectedUser.age">
         </div>
         <div class="flex-j-center btnGroup">
           <button type="submit" [disabled]="!userForm.valid" disabled>Submit</button>
@@ -54,7 +54,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let user of starterService.users">
+            <tr *ngFor="let user of demoService.users">
               <td>{{user.name}}</td>
               <td>{{user.age}}</td>
               <td>
@@ -84,14 +84,14 @@
 <div>
   <div>
     <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
-      <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="starterService.selectedUser._id">
+      <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="demoService.selectedUser._id">
       <div class="formGroup">
         <label for="userName">Name <span class="red-text bold-text">*</span></label>
-        <input type="text" id="userName" name="name" #name="ngModel" [(ngModel)]="starterService.selectedUser.name" required>
+        <input type="text" id="userName" name="name" #name="ngModel" [(ngModel)]="demoService.selectedUser.name" required>
       </div>
       <div class="formGroup">
         <label for="userage">age</label>
-        <input type="text" id="userage" name="age" #age="ngModel" [(ngModel)]="starterService.selectedUser.age">
+        <input type="text" id="userage" name="age" #age="ngModel" [(ngModel)]="demoService.selectedUser.age">
       </div>
       <div>
         <button type="submit" [disabled]="!userForm.valid">Submit</button>
@@ -108,7 +108,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let user of starterService.users">
+        <tr *ngFor="let user of demoService.users">
           <td>{{user.name}}</td>
           <td>{{user.age}}</td>
           <td>

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Demo } from './starter.model';
+import { Demo } from './demo.model';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -9,7 +9,7 @@ export class DemoService {
   selectedUser: Demo;
   users: Demo[];
 
-  readonly baseURL = 'http://localhost:3000/users';
+  readonly baseURL = 'http://localhost:3000/starter';
 
   constructor(private httpClient: HttpClient) { }
 

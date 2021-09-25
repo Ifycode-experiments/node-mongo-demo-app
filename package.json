@@ -1,6 +1,6 @@
 {
   "name": "node-mongo-demo-app",
-  "description": "Demo app built to help users tour or learn to use the starter kit generated from the node-mongo-cli project.",
+  "description": "node-mongo demo (client) app with CRUD operations setup for testing the boilerplate template kit(s) generated from the node-mongo-cli.",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",

@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { DemoService } from '../shared/starter.service';
-import { Demo } from '../shared/starter.model';
+import { DemoService } from '../shared/demo.service';
+import { Demo } from '../shared/demo.model';
 
 @Component({
-  selector: 'app-starter',
-  templateUrl: './starter.component.html'
+  selector: 'app-demo',
+  templateUrl: './demo.component.html'
 })
 export class DemoComponent implements OnInit {
 
-  constructor(public starterService: DemoService) {
+  constructor(public demoService: DemoService) {
 
   }
 
@@ -21,7 +21,7 @@ export class DemoComponent implements OnInit {
   resetForm(form?: NgForm) {
     if (form)
       form.reset();
-      this.starterService.selectedUser = {
+      this.demoService.selectedUser = {
         _id: "",
         name: "",
         age: null
@@ -30,13 +30,13 @@ export class DemoComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     if (form.value._id === '') {
-      this.starterService.postUser(form.value)
+      this.demoService.postUser(form.value)
       .subscribe(res => {
         this.resetForm(form);
         this.refreshUsersList();
       });
     }else {
-      this.starterService.putUser(form.value)
+      this.demoService.putUser(form.value)
       .subscribe(res => {
         this.resetForm(form);
         this.refreshUsersList();
@@ -45,18 +45,18 @@ export class DemoComponent implements OnInit {
   }
 
   refreshUsersList() {
-    this.starterService.getUserList().subscribe(res => {
-      this.starterService.users = res['items'];
+    this.demoService.getUserList().subscribe(res => {
+      this.demoService.users = res['items'];
     });
   }
 
   onEdit(user: Demo) {
-    this.starterService.selectedUser = user;
+    this.demoService.selectedUser = user;
   }
 
   onDelete(_id: string, form: NgForm) {
     if(confirm('Are you sure you want to delete this record?') === true) {
-      this.starterService.deleteUser(_id)
+      this.demoService.deleteUser(_id)
         .subscribe(res => {
           this.refreshUsersList();
           this.resetForm();
