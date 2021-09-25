@@ -9,7 +9,7 @@ export class DemoService {
   selectedUser: Demo;
   users: Demo[];
 
-  readonly baseURL = 'http://localhost:3000/starter';
+  readonly baseURL = 'http://localhost:3000/demo';
 
   constructor(private httpClient: HttpClient) { }
 
