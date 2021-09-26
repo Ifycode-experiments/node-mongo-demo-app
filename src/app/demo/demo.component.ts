@@ -29,23 +29,28 @@ export class DemoComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    if (form.value._id === '' || form.value._id === null) {
-      this.demoService.postUser(form.value)
-      .subscribe(res => {
-        this.resetForm(form);
-        this.refreshUsersList();
-      });
-    }else {
-      this.demoService.putUser(form.value)
-      .subscribe(res => {
-        this.resetForm(form);
-        this.refreshUsersList();
-      });
-      //restore reset after edit
-      let reset = document.querySelector('#reset');
-      reset.removeAttribute('disabled');
-      reset.classList.remove('transparent-border');
+    let acceptable = () => {
+      if (form.value._id === '' || form.value._id === null) {
+        this.demoService.postUser(form.value)
+        .subscribe(res => {
+          this.resetForm(form);
+          this.refreshUsersList();
+        });
+      }else {
+        this.demoService.putUser(form.value)
+        .subscribe(res => {
+          this.resetForm(form);
+          this.refreshUsersList();
+        });
+        //restore reset after edit
+        let reset = document.querySelector('#reset');
+        reset.removeAttribute('disabled');
+        reset.classList.remove('transparent-border');
+      }
     }
+
+    if (form.value.age <= 0) console.log('Please supply only age greater than 0');
+      else acceptable();
   }
 
   refreshUsersList() {
