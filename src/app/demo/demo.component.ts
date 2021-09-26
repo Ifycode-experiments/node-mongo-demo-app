@@ -42,7 +42,9 @@ export class DemoComponent implements OnInit {
         this.refreshUsersList();
       });
       //restore reset after edit
-      document.querySelector('#reset').removeAttribute('disabled');
+      let reset = document.querySelector('#reset');
+      reset.removeAttribute('disabled');
+      reset.classList.remove('transparent-border');
     }
   }
 
@@ -55,7 +57,9 @@ export class DemoComponent implements OnInit {
   onEdit(user: Demo) {
     this.demoService.selectedUser = user;
     //prevent reset from clearing data in table
-    document.querySelector('#reset').setAttribute('disabled', '');
+    let reset = document.querySelector('#reset');
+    reset.setAttribute('disabled', '');
+    reset.classList.add('transparent-border');
   }
 
   onDelete(_id: string, form: NgForm) {

@@ -61,6 +61,7 @@
 :root {
   --josefin: 'Josefin Sans', sans-serif;
   --nunito: 'Nunito Sans', sans-serif;
+  --teal: teal;
 }
 
 body {
@@ -195,6 +196,20 @@ footer a {
   display: inline-block;
   margin: 0 4px;
 }
+
+/* assist */
+
+.fancy-btn {
+  background: transparent;
+  color: var(--teal);
+  border: 1px solid var(--teal);
+}
+
+.transparent-border {
+  border: 1px solid transparent;
+}
+
+/*----------*/
 
 @media screen and (min-width: 401px) {
   h1 {
