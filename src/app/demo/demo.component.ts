@@ -29,7 +29,7 @@ export class DemoComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    if (form.value._id === '') {
+    if (form.value._id === '' || form.value._id === null) {
       this.demoService.postUser(form.value)
       .subscribe(res => {
         this.resetForm(form);
