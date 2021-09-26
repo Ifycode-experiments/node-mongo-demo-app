@@ -28,8 +28,8 @@
           <input type="text" id="userName" name="name" #name="ngModel" [(ngModel)]="demoService.selectedUser.name" required>
         </div>
         <div class="block-auto formGroup">
-          <label for="userage">age</label>
-          <input type="text" id="userage" name="age" #age="ngModel" [(ngModel)]="demoService.selectedUser.age">
+          <label for="userage">Age <span class="red-text bold-text">*</span></label>
+          <input type="text" id="userage" name="age" #age="ngModel" [(ngModel)]="demoService.selectedUser.age" required>
         </div>
         <div class="flex-j-center btnGroup">
           <button type="submit" [disabled]="!userForm.valid" disabled>Submit</button>
