@@ -33,7 +33,7 @@
   margin: 0 auto 20px auto;
 }
 
-.main-section .img-case {
+.table-section .img-case {
   width: 30px;
 }
 
@@ -113,14 +113,14 @@ main {
   margin: 10px 0 0 0;
 }
 
-.main-section .empty-div {
+.table-section .empty-div {
   display: none;
   background: #ececec;
   color: #999999;
   height: 150px;
 }
 
-.main-section table {
+.table-section table {
   /*display: none;*/
   table-layout: fixed;
   border-collapse: collapse;
@@ -142,14 +142,13 @@ tbody td {
   font-size: 0.9em;
 }
 
-.main-section button {
-  padding: 0;
-  margin: 0 5px;
+.table-section button {
+  padding: 5px;
+  margin: 0 10px 0 0;
 }
 
-.main-section a {
+.table-section button:nth-child(2) {
   margin: 0;
-  padding: 0;
 }
 
 .form {

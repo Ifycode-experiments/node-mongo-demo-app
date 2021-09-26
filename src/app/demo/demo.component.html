@@ -36,7 +36,7 @@
           <button id="reset" class="fancy-btn" type="button" (click)="resetForm(userForm)">Reset</button>
         </div>
       </form>
-      <section class="x-auto main-section">
+      <section class="x-auto table-section">
         <div class="flex-center empty-div">Nothing to display yet</div>
         <table class="table">
           <thead>
@@ -50,16 +50,8 @@
               <td>{{user.name}}</td>
               <td>{{user.age}}</td>
               <td>
-                <button class="btn-default" (click)="onEdit(user)">
-                  <a class="img-wrapper img-case">
-                    <img class="img-default" src="./edit-icon.png" alt="edit button icon">
-                  </a>
-                </button>
-                <button class="btn-danger" (click)="onDelete(user._id, userForm)">
-                  <a class="img-wrapper img-case">
-                    <img class="img-default delete-icon" src="./delete-icon.png" alt="delete button icon">
-                  </a>
-                </button>
+                <button class="btn-default" (click)="onEdit(user)">Edit</button>
+                <button class="btn-danger" (click)="onDelete(user._id, userForm)">Delete</button>
               </td>
             </tr>
           </tbody>
