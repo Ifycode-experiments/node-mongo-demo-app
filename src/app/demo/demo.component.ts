@@ -41,6 +41,8 @@ export class DemoComponent implements OnInit {
         this.resetForm(form);
         this.refreshUsersList();
       });
+      //restore reset after edit
+      document.querySelector('#reset').removeAttribute('disabled');
     }
   }
 
@@ -52,6 +54,8 @@ export class DemoComponent implements OnInit {
 
   onEdit(user: Demo) {
     this.demoService.selectedUser = user;
+    //prevent reset from clearing data in table
+    document.querySelector('#reset').setAttribute('disabled', '');
   }
 
   onDelete(_id: string, form: NgForm) {
