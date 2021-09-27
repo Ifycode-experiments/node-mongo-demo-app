@@ -190,6 +190,9 @@ footer a {
 }
 
 /* assist */
+.red-text {
+  color: #e40101;
+}
 
 .fancy-btn {
   background: transparent;
