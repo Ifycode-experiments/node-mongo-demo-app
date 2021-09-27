@@ -29,18 +29,33 @@ export class DemoComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
+    let table = document.querySelector('table');
+    let emptyDiv = document.querySelector('.empty-div');
+    let connected = () => {
+      table.classList.add('display-none');
+      emptyDiv.innerHTML = 'Not connected to database';
+      emptyDiv.classList.remove('display-none');
+    }
     let acceptable = () => {
       if (form.value._id === '' || form.value._id === null) {
         this.demoService.postUser(form.value)
         .subscribe(res => {
           this.resetForm(form);
           this.refreshUsersList();
+        },
+        err => {
+          console.log(err.message);
+          connected();
         });
       }else {
         this.demoService.putUser(form.value)
         .subscribe(res => {
           this.resetForm(form);
           this.refreshUsersList();
+        },
+        err => {
+          console.log(err.message);
+          connected();
         });
         //restore reset after edit
         let reset = document.querySelector('#reset');
@@ -54,8 +69,25 @@ export class DemoComponent implements OnInit {
   }
 
   refreshUsersList() {
+    let table = document.querySelector('table');
+    let emptyDiv = document.querySelector('.empty-div');
+    let connected = (msg: string) => {
+      table.classList.add('display-none');
+      emptyDiv.innerHTML = msg;
+      emptyDiv.classList.remove('display-none');
+    }
     this.demoService.getUserList().subscribe(res => {
+      if (res['count'] >= 1) {
+        table.classList.remove('display-none');
+        emptyDiv.classList.add('display-none');
+      } else {
+        connected('Database is empty - add data');
+      }
       this.demoService.users = res['items'];
+    },
+    err => {
+      console.log(err.message);
+      connected('Not connected to database');
     });
   }
 

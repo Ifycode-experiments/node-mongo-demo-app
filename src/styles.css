@@ -105,7 +105,6 @@ main {
 }
 
 .table-section .empty-div {
-  display: none;
   background: #ececec;
   color: var(--grey);
   height: 150px;
@@ -200,6 +199,10 @@ footer a {
 
 .transparent-border {
   border: 1px solid transparent;
+}
+
+.display-none {
+  display: none;
 }
 
 /*----------*/
