@@ -53,6 +53,7 @@
 :root {
   --josefin: 'Josefin Sans', sans-serif;
   --nunito: 'Nunito Sans', sans-serif;
+  --grey: #999999;
   --teal: teal;
 }
 
@@ -66,8 +67,11 @@ h1 {
   padding: 5px 0 0 0;
 }
 
+a {
+  color: var(--teal);
+}
+
 h1 a {
-  color: #222222;
   text-decoration: none;
 }
 
@@ -76,6 +80,14 @@ button {
   padding: 8px 10px;
   border-radius: 4px;
   font-family: var(--josefin);
+  background: var(--teal);
+  color: white;
+}
+
+button:hover,
+button:focus {
+  transform: scale(1.05);
+  transition: transform 0.2s linear;
 }
 
 main {
@@ -95,21 +107,25 @@ main {
 .table-section .empty-div {
   display: none;
   background: #ececec;
-  color: #999999;
+  color: var(--grey);
   height: 150px;
 }
 
 .table-section table {
-  /*display: none;*/
+  width: 100%;
   table-layout: fixed;
   border-collapse: collapse;
-  width: 100%;
-  /*width: 120%;*/
+}
+
+.table-section table,
+thead th:not(th:nth-last-child(1)),
+tbody tr td:not(td:nth-last-child(1)) {
+  border: 1px solid var(--grey);
 }
 
 thead th,
 tbody td {
-  padding: 5px 0;
+  padding: 5px 0 5px 5px;
   text-align: left;
 }
 
@@ -134,7 +150,7 @@ tbody td {
   padding: 20px 0;
   box-shadow: 0 0 35px rgba(153, 153, 153, 0.2);
   border-radius: 3px;
-  margin: 0 0 30px 0;
+  margin: 0 0 25px 0;
 }
 
 .form .btnGroup {

@@ -3,7 +3,7 @@
   <header class="flex-space-btw">
     <h1><a href="./">node-mongo demo app</a></h1>
     <nav>
-      <button class="btn-default">Tutorial</button>
+      <button>Tutorial</button>
     </nav>
   </header>
   <main>
@@ -17,7 +17,7 @@
             in a table below the form if connection is well set up. Click on this 
             link to see your entries returned as json data
             - <a href="http://localhost:3000/demo" target="_blank">localhost:3000/demo</a>.
-            The content of the database you set up has also been updated.
+            The content of the database you set up will also be updated accordingly.
           </p>
         </div>
       </header>
@@ -43,6 +43,7 @@
             <tr>
               <th>Name</th>
               <th>Age</th>
+              <th></th><!--empty one added to fix safari browser's styling issue -->
             </tr>
           </thead>
           <tbody>
@@ -50,7 +51,7 @@
               <td>{{user.name}}</td>
               <td>{{user.age}}</td>
               <td>
-                <button class="btn-default" (click)="onEdit(user)">Edit</button>
+                <button (click)="onEdit(user)">Edit</button>
                 <button class="btn-danger" (click)="onDelete(user._id, userForm)">Delete</button>
               </td>
             </tr>
