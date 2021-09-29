@@ -1,7 +1,22 @@
 # node-mongo demo app
 ### (demo app for the node-mongo project)
 
-Demo (client) app with CRUD operations setup for testing the boilerplate template kit(s) generated from the node-mongo-cli.
+Demo (client) app with CRUD operations setup for testing the [boilerplate template kit(s)](https://github.com/code-collabo/node-mongo-esm-kit) generated from the [node-mongo-cli](https://github.com/code-collabo/node-mongo-cli).
+
+Download the app, change directory (cd) into the root of the demo app and install dependencies:
+````
+npm install
+````
+Start the app:
+````
+npm start
+````
+View the demo app in the browser at http://localhost:4200. Although the app is built with angular, you don't need to have any knowledge of how to write an angular application. See [node-mongo documentation](https://code-collabo.gitbook.io/node-mongo/) for how to use the app with the boilerplate template kits.
+
+
+
+
+
 <!--
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
 
