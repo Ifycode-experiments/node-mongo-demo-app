@@ -13,6 +13,12 @@ npm start
 ````
 View the demo app in the browser at http://localhost:4200. Although the app is built with angular, you don't need to have any knowledge of how to write an angular application. See [node-mongo documentation](https://code-collabo.gitbook.io/node-mongo/) for how to use the app with the boilerplate template kits.
 
+## Want to contribute?
+Love the project and wish to contribute? See contribution guide in the [node-mongo gitbook documentation](https://code-collabo.gitbook.io/node-mongo/) for how to start contributing. You can also reach out to [@Ifycode](https://github.com/Ifycode) in case you need any assistance.
+
+## Contributors ✨
+
+Thanks to these [amazing contributors to the node-mongo project](https://github.com/code-collabo/node-mongo-cli#appreciation). This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. See [emoji key](https://allcontributors.org/docs/en/emoji-key). Contributions of any kind welcome!
 
 
 
